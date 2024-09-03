@@ -5,6 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import br.edu.iftm.rastreamento.model.Pacote;
 
+import java.util.List;
+
 @Repository
 public interface PacoteRepository extends CrudRepository<Pacote, Long> {
+    List<Pacote> findByStatus(String status);
+
+    List<Pacote> findByDestinatario(String destinatario);
+
 }
